@@ -1,15 +1,7 @@
-# legacy_script.py
-# Simulates a fragile legacy script with hidden business logic
+from src.core.processing import calculate_total
 
 def run(data):
-    total = 0
-    for x in data:
-        if x > 10:
-            total += x * 1.1
-        else:
-            total += x * 0.9
-    return round(total, 2)
-
+    return calculate_total(data)
 
 if __name__ == "__main__":
     sample = [5, 12, 20]
