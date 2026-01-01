@@ -31,3 +31,6 @@ jobs:
         run: |
           export PYTHONPATH=$(pwd)
           pytest tests
+      - name: Build Docker image
+        run: |
+          docker build -t legacy-modernization .
