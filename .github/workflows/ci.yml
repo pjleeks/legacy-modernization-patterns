@@ -1,7 +1,7 @@
 ---
 name: Legacy Modernization CI
 
-"on":
+on:
   push:
     branches:
       - main
@@ -31,6 +31,12 @@ jobs:
         run: |
           export PYTHONPATH=$(pwd)
           pytest tests
+
+      - name: Show files in root
+        run: |
+          pwd
+          ls -l
+
       - name: Build Docker image
         run: |
-          docker build -t legacy-modernization .
+          docker build -f Dockerfile -t legacy-modernization .
